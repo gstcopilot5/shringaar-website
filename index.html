@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shringaar Digital Studio — Websites for Local Businesses in Rajkot</title>
+<meta name="description" content="Shringaar Digital Studio builds stunning, fast websites plus Google listings, Instagram & Facebook pages and SEO for jewellers and local shops in Rajkot. Get found online and bring in more customers." />
+<meta name="keywords" content="website design Rajkot, web developer Rajkot, jewellery website, local business website, Google Business Profile, SEO Rajkot, Shringaar Digital Studio" />
+<meta name="theme-color" content="#0e0f13" />
+<link rel="canonical" href="https://shringaardigitalstudio.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Shringaar Digital Studio — Websites for Local Businesses" />
+<meta property="og:description" content="Stunning websites, Google listings, social pages & SEO for jewellers and shops in Rajkot." />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:site_name" content="Shringaar Digital Studio" />
+<meta property="og:url" content="https://shringaardigitalstudio.com/" />
+<meta property="og:image" content="https://shringaardigitalstudio.com/og-banner.png" />
+<meta property="og:image:alt" content="Shringaar Digital Studio — Web Design & Development, Rajkot" />
+<meta name="twitter:title" content="Shringaar Digital Studio — Websites for Local Businesses" />
+<meta name="twitter:description" content="Stunning websites, Google listings, social pages & SEO for jewellers and shops in Rajkot." />
+<meta name="twitter:image" content="https://shringaardigitalstudio.com/og-banner.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0f13'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='30' font-weight='700' text-anchor='middle' fill='%23f5b73c'%3E%26lt;%3Ctspan fill='%23ef4444'%3ES%3C/tspan%3E/%26gt;%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Shringaar Digital Studio","description":"Website design, Google Business Profile, social media setup and SEO for local businesses and jewellers in Rajkot.","areaServed":"Rajkot, Gujarat, India","email":"shringaardigitalstudio@gmail.com","telephone":"+91-81163-17662","address":{"@type":"PostalAddress","addressLocality":"Rajkot","addressRegion":"Gujarat","addressCountry":"IN"},"priceRange":"₹₹","url":"https://shringaardigitalstudio.com/","sameAs":["https://www.instagram.com/shringaardigitalstudio","https://www.facebook.com/share/19G7RcFraa/","https://wa.me/918116317662"]}
+</script>
+<style>
+  :root{
+    --bg:#0e0f13; --bg2:#14161c; --card:#191c24; --glass:rgba(255,255,255,.045);
+    --paper:#fbfbfc; --red:#ef4444; --amber:#f5b73c; --gray:#aeb4c0;
+    --text:#eef0f4; --muted:#9aa1ad; --line:rgba(255,255,255,.08);
+    --grad:linear-gradient(95deg,#f5b73c,#ef4444);
+    --radius:18px; --max:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.02em}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shimmer 4s linear infinite}
+  @keyframes shimmer{to{background-position:200% center}}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--amber);opacity:.6}
+
+  .aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.4;animation:drift 22s ease-in-out infinite}
+  .b1{width:46vw;height:46vw;background:#ef4444;top:-12vw;left:-8vw}
+  .b2{width:40vw;height:40vw;background:#f5b73c;top:20vh;right:-10vw;animation-delay:-7s}
+  .b3{width:38vw;height:38vw;background:#7b3ff2;bottom:-14vw;left:30vw;opacity:.28;animation-delay:-13s}
+  @keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(4vw,3vh) scale(1.08)}66%{transform:translate(-3vw,-2vh) scale(.95)}}
+  .noise{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  header{position:sticky;top:0;z-index:50}
+  .navbar{display:flex;align-items:center;justify-content:space-between;height:68px;background:rgba(14,15,19,.6);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:16px;margin-top:14px;padding:0 16px 0 14px;transition:height .25s ease}
+  header.shrink .navbar{height:58px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Outfit';font-weight:700;font-size:1rem;white-space:nowrap}
+  .brand .mk{width:36px;height:29px;border-radius:7px;background:var(--paper);overflow:hidden;flex:none;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+  .brand .mk .b{height:9px;background:#eceef2;display:flex;align-items:center;gap:2.5px;padding:0 4px}
+  .brand .mk .b i{width:2.6px;height:2.6px;border-radius:50%}
+  .brand .mk .b i:nth-child(1){background:var(--red)}.brand .mk .b i:nth-child(2){background:var(--amber)}.brand .mk .b i:nth-child(3){background:var(--gray)}
+  .brand .mk .t{height:20px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono';font-weight:700;font-size:.66rem;color:var(--amber)}
+  .brand .mk .t b{color:var(--red)}
+  .brand .full b{font-weight:800}.brand .full span{color:var(--muted);font-weight:500}
+  .menu{display:none;align-items:center;gap:26px}
+  .menu a{font-size:.92rem;color:var(--muted);font-weight:500;transition:color .15s}
+  .menu a:hover{color:var(--text)}
+  .nav-right{display:flex;align-items:center;gap:8px}
+  .bell{position:relative;width:40px;height:40px;border-radius:11px;border:1px solid var(--line);background:var(--glass);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text)}
+  .bell .dot{position:absolute;top:9px;right:10px;width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px var(--bg)}
+  .bell .dot::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:1px solid var(--red);animation:ping 1.8s ease-out infinite}
+  @keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+  .noti{position:absolute;top:54px;right:0;width:280px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.2s;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+  .noti.open{opacity:1;visibility:visible;transform:none}
+  .noti h4{font-family:'JetBrains Mono';font-size:.7rem;color:var(--muted);padding:8px 10px;text-transform:uppercase;letter-spacing:.06em}
+  .noti .row{display:flex;gap:10px;padding:10px;border-radius:10px}
+  .noti .row:hover{background:var(--glass)}
+  .noti .row .ic{width:30px;height:30px;border-radius:8px;background:var(--grad);flex:none;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  .noti .row p{font-size:.85rem;line-height:1.35}.noti .row small{color:var(--muted);font-size:.72rem}
+  .btn{font-family:'Outfit';font-weight:600;font-size:.92rem;padding:11px 18px;border-radius:11px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .2s ease,background .15s}
+  .btn-primary{background:var(--grad);color:#1a0e00;box-shadow:0 8px 24px rgba(239,68,68,.25)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(239,68,68,.4)}
+  .btn-wa{background:#25d366;color:#06301a}
+  .btn-wa:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text);background:transparent}
+  .btn-ghost:hover{border-color:var(--amber);transform:translateY(-2px)}
+  .hamb{display:flex;width:40px;height:40px;border-radius:11px;border:1px solid var(--line);background:var(--glass);align-items:center;justify-content:center;cursor:pointer;flex-direction:column;gap:4px}
+  .hamb span{width:17px;height:2px;background:var(--text);border-radius:2px;transition:.25s}
+  header.menu-open .hamb span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  header.menu-open .hamb span:nth-child(2){opacity:0}
+  header.menu-open .hamb span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .mobile-menu{position:fixed;inset:0 0 0 auto;width:min(82vw,330px);background:var(--bg2);border-left:1px solid var(--line);z-index:60;transform:translateX(100%);visibility:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),visibility .3s;padding:90px 26px 40px;display:flex;flex-direction:column;gap:6px}
+  header.menu-open ~ .mobile-menu{transform:none;visibility:visible}
+  .mobile-menu a{padding:14px 0;font-family:'Outfit';font-weight:600;font-size:1.15rem;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{margin-top:20px;justify-content:center}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;visibility:hidden;transition:.3s}
+  header.menu-open ~ .scrim{opacity:1;visibility:visible}
+
+  .hero{padding:60px 0 40px;position:relative}
+  .hero-grid{display:grid;gap:40px;align-items:center}
+  @media(min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+  .hero h1{font-size:clamp(2.3rem,6.4vw,4rem);margin:18px 0}
+  .hero .lead{font-size:clamp(1.02rem,2.4vw,1.2rem);color:var(--muted);max-width:50ch}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+  .hero .cta-row .btn{padding:14px 24px;font-size:1rem}
+  .pills{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+  .pill{font-family:'JetBrains Mono';font-size:.74rem;color:var(--gray);border:1px solid var(--line);background:var(--glass);padding:7px 13px;border-radius:30px}
+  .mock{position:relative;animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .browser{background:var(--paper);border-radius:16px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.55);transform:perspective(1000px) rotateY(-9deg) rotateX(4deg)}
+  .browser .top{height:34px;background:#edeff2;display:flex;align-items:center;gap:6px;padding:0 14px}
+  .browser .top i{width:9px;height:9px;border-radius:50%}
+  .browser .top i:nth-child(1){background:var(--red)}.browser .top i:nth-child(2){background:var(--amber)}.browser .top i:nth-child(3){background:#28c840}
+  .browser .top .url{margin-left:8px;height:16px;flex:1;background:#fff;border-radius:8px}
+  .site{background:#fff;color:#1a1c22}
+  .site .shero{padding:26px 22px;background:linear-gradient(135deg,#fff,#fff6ee)}
+  .site .shero .k{font-family:'JetBrains Mono';font-size:.6rem;color:#c98a2e;letter-spacing:.1em}
+  .site .shero h4{font-family:'Outfit';font-weight:800;font-size:1.35rem;color:#16181d;margin:6px 0;line-height:1.1}
+  .site .shero .b{display:inline-block;margin-top:8px;background:var(--grad);color:#1a0e00;font-family:'Outfit';font-weight:700;font-size:.7rem;padding:7px 13px;border-radius:8px}
+  .site .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:16px 22px 24px}
+  .site .grid3 div{height:54px;border-radius:9px;background:linear-gradient(135deg,#f2c14e22,#ef444422);border:1px solid #00000010}
+  .spark{position:absolute;color:#fff;filter:drop-shadow(0 0 8px rgba(245,183,60,.9));font-size:1.4rem;animation:tw 2.4s ease-in-out infinite}
+  .spark.s1{top:-14px;right:24px}.spark.s2{bottom:30px;left:-12px;font-size:1rem;animation-delay:.8s}
+  /* outstanding hero extras */
+  .hero{position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,30%) var(--my,25%),rgba(245,183,60,.10),transparent 70%);pointer-events:none;z-index:0}
+  .hero-grid{position:relative;z-index:1}
+  .hero-badge{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono';font-size:.74rem;letter-spacing:.04em;color:var(--amber);background:var(--glass);border:1px solid var(--line);padding:8px 14px;border-radius:30px}
+  .livedot{width:8px;height:8px;border-radius:50%;background:#28c840;position:relative;flex:none;box-shadow:0 0 8px #28c840}
+  .livedot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid #28c840;animation:ping 1.8s ease-out infinite}
+  .rotator{display:inline-block;position:relative;min-width:1ch}
+  .rotator .word{display:inline-block;will-change:transform,opacity}
+  .rotator .word.out{animation:rotOut .35s forwards}
+  .rotator .word.in{animation:rotIn .5s forwards}
+  @keyframes rotOut{to{opacity:0;transform:translateY(-14px) rotateX(40deg)}}
+  @keyframes rotIn{from{opacity:0;transform:translateY(16px) rotateX(-40deg)}to{opacity:1;transform:none}}
+  .trust{display:flex;align-items:center;gap:11px;margin-top:24px;color:var(--muted);font-size:.88rem}
+  .trust .stars{color:var(--amber);letter-spacing:2px;font-size:1rem}
+  .glow-ring{position:absolute;inset:-28px;border-radius:32px;background:conic-gradient(from 0deg,#f5b73c,#ef4444,#7b3ff2,#f5b73c);filter:blur(46px);opacity:.32;animation:spin 14s linear infinite;z-index:-1}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .browser.tilt{transform:perspective(1100px) rotateY(var(--ry,-10deg)) rotateX(var(--rx,5deg));transition:transform .25s ease}
+  .badge-float{position:absolute;z-index:4;background:rgba(20,22,28,.86);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:13px;padding:9px 13px;font-family:'Outfit';font-weight:700;font-size:.82rem;display:flex;align-items:center;gap:7px;box-shadow:0 14px 34px rgba(0,0,0,.5);animation:floatB 5s ease-in-out infinite}
+  .badge-float small{font-weight:500;color:var(--muted);font-size:.7rem}
+  .bf-live{top:0;left:-6px;color:#fff}
+  .bf-rating{top:42%;right:-10px;color:var(--amber);animation-delay:-1.6s}
+  .bf-visits{bottom:14px;left:-10px;color:#34d058;animation-delay:-3.2s}
+  @keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .scroll-ind{display:flex;justify-content:center;margin-top:34px;position:relative;z-index:1}
+  .scroll-ind i{width:24px;height:40px;border:2px solid var(--muted);border-radius:14px;position:relative;display:block}
+  .scroll-ind i::after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:4px;height:8px;border-radius:3px;background:var(--amber);animation:scrolld 1.6s ease-in-out infinite}
+  @keyframes scrolld{0%{opacity:0;top:6px}45%{opacity:1;top:13px}100%{opacity:0;top:22px}}
+  @keyframes tw{0%,100%{opacity:.4;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;overflow:hidden;margin-top:30px;-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .track{display:flex;gap:42px;width:max-content;animation:scroll 26s linear infinite}
+  .track span{font-family:'Outfit';font-weight:700;font-size:1.05rem;color:var(--muted);display:inline-flex;gap:42px;align-items:center}
+  .track span::after{content:"✦";color:var(--amber)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  section{padding:78px 0}
+  .sec-head{max-width:620px;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(1.9rem,4.6vw,2.8rem);margin-top:12px}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:1.02rem}
+
+  .why-grid{display:grid;gap:18px;grid-template-columns:1fr}
+  @media(min-width:640px){.why-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:980px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .2s,border-color .2s,box-shadow .2s;position:relative;overflow:hidden}
+  .feat:hover{transform:translateY(-5px);border-color:rgba(245,183,60,.4);box-shadow:0 20px 40px rgba(0,0,0,.35)}
+  .feat .ic{width:48px;height:48px;border-radius:13px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px}
+  .feat h3{font-size:1.18rem;margin-bottom:8px}
+  .feat p{color:var(--muted);font-size:.94rem}
+
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
+  @media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{text-align:center;background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:24px 12px}
+  .stat .num{font-family:'Outfit';font-weight:900;font-size:2rem}
+  .stat .lab{color:var(--muted);font-size:.84rem;margin-top:4px}
+
+  .work-grid{display:grid;gap:20px;grid-template-columns:1fr}
+  @media(min-width:780px){.work-grid{grid-template-columns:1fr 1fr}}
+  .case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .2s,border-color .2s}
+  .case:hover{transform:translateY(-5px);border-color:rgba(245,183,60,.4)}
+  .case.big{grid-column:1/-1}
+  .thumb{height:170px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .thumb.t1{background:linear-gradient(135deg,#241016,#3a1620)}
+  .thumb.t2{background:linear-gradient(135deg,#10202e,#13314a)}
+  .thumb.t3{background:linear-gradient(135deg,#102418,#16412c)}
+  .thumb .lbl{font-family:'Outfit';font-weight:800;font-size:1.5rem;color:#fff;opacity:.92}
+  .thumb .badge{position:absolute;top:14px;left:14px;font-family:'JetBrains Mono';font-size:.66rem;background:rgba(0,0,0,.45);padding:5px 10px;border-radius:7px;color:var(--amber)}
+  .case .cbody{padding:22px}
+  .case h3{font-size:1.25rem;margin-bottom:7px}
+  .case p{color:var(--muted);font-size:.94rem}
+  .case .visit{margin-top:14px;font-family:'Outfit';font-weight:600;font-size:.9rem;display:inline-flex;gap:6px;align-items:center}
+  .case .visit:hover{color:var(--amber)}
+
+  #plans{background:var(--bg2)}
+  .plans{display:grid;gap:20px;grid-template-columns:1fr}
+  @media(min-width:860px){.plans{grid-template-columns:repeat(3,1fr)}}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 26px;display:flex;flex-direction:column;transition:transform .2s}
+  .plan:hover{transform:translateY(-5px)}
+  .plan.pop{background:linear-gradient(var(--card),var(--card)) padding-box,var(--grad) border-box;border:1.5px solid transparent;position:relative}
+  .plan.pop::before{content:"Most popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--grad);color:#1a0e00;font-family:'Outfit';font-weight:700;font-size:.72rem;padding:5px 14px;border-radius:30px}
+  .plan .pname{font-family:'JetBrains Mono';font-size:.8rem;color:var(--amber);text-transform:uppercase;letter-spacing:.06em}
+  .plan .price{font-family:'Outfit';font-weight:900;font-size:2.4rem;margin:14px 0 4px}
+  .plan .price small{font-size:.9rem;font-weight:500;color:var(--muted)}
+  .plan ul{list-style:none;margin:20px 0 26px;display:flex;flex-direction:column;gap:11px}
+  .plan li{font-size:.92rem;color:var(--text);display:flex;gap:10px;align-items:flex-start}
+  .plan li::before{content:"✓";color:var(--amber);font-weight:800}
+  .plan .btn{margin-top:auto;justify-content:center}
+
+  .about-grid{display:grid;gap:34px;align-items:center}
+  @media(min-width:880px){.about-grid{grid-template-columns:1fr 1fr}}
+  .about-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;position:relative;overflow:hidden}
+  .about-card .qt{font-family:'Outfit';font-weight:800;font-size:3rem;color:var(--red);line-height:.5}
+  .about-card blockquote{font-family:'Outfit';font-weight:600;font-size:1.2rem;line-height:1.4;margin:14px 0}
+  .about-card .who{font-family:'JetBrains Mono';font-size:.8rem;color:var(--gray)}
+  .about-card .who b{color:var(--amber)}
+
+  .faq{max-width:760px;margin:0 auto}
+  .qa{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:var(--card)}
+  .qa button{width:100%;text-align:left;background:none;border:none;color:var(--text);font-family:'Outfit';font-weight:600;font-size:1.02rem;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;cursor:pointer}
+  .qa button .pm{font-size:1.4rem;color:var(--amber);transition:transform .25s;flex:none}
+  .qa.open button .pm{transform:rotate(45deg)}
+  .qa .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .qa .ans p{padding:0 20px 20px;color:var(--muted);font-size:.95rem}
+
+  #contact{background:var(--bg2)}
+  .contact-grid{display:grid;gap:30px}
+  @media(min-width:840px){.contact-grid{grid-template-columns:.9fr 1.1fr}}
+  .contact-info p{color:var(--muted);margin:10px 0 24px}
+  .ci-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .ci-row .ic{width:44px;height:44px;border-radius:12px;background:var(--glass);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--amber);flex:none}
+  .ci-row b{font-family:'Outfit'}.ci-row small{color:var(--muted);display:block;font-size:.82rem}
+  .socials{display:flex;gap:12px;margin-top:8px}
+  .socials a{width:44px;height:44px;border-radius:12px;background:var(--glass);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.18s}
+  .socials a:hover{border-color:var(--amber);transform:translateY(-3px);color:var(--amber)}
+  form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+  form label{font-size:.82rem;color:var(--muted);font-family:'JetBrains Mono'}
+  form input,form textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:13px 14px;color:var(--text);font-family:inherit;font-size:.95rem;margin:7px 0 16px;transition:border-color .15s}
+  form input:focus,form textarea:focus{outline:none;border-color:var(--amber)}
+  form .btn{width:100%;justify-content:center;padding:15px}
+
+  .final{position:relative;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:60px 26px;overflow:hidden}
+  .final h2{font-size:clamp(1.9rem,5vw,3rem)}
+  .final p{color:var(--muted);max-width:44ch;margin:16px auto 30px}
+
+  footer.ft{border-top:1px solid var(--line);padding:60px 0 34px;background:var(--bg)}
+  .ft-grid{display:grid;gap:34px;grid-template-columns:1fr}
+  @media(min-width:760px){.ft-grid{grid-template-columns:2fr 1fr 1fr 1.3fr}}
+  .ft-grid h5{font-family:'JetBrains Mono';font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:16px}
+  .ft-grid a{display:block;color:var(--muted);font-size:.92rem;padding:5px 0;transition:color .15s}
+  .ft-grid a:hover{color:var(--amber)}
+  .ft-about p{color:var(--muted);font-size:.92rem;margin:14px 0 18px;max-width:34ch}
+  .ft-bottom{border-top:1px solid var(--line);margin-top:40px;padding-top:24px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;font-family:'JetBrains Mono';font-size:.78rem;color:var(--muted)}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:8px}
+  .back-top{position:fixed;bottom:22px;right:22px;width:46px;height:46px;border-radius:50%;background:var(--grad);color:#1a0e00;display:flex;align-items:center;justify-content:center;z-index:40;opacity:0;visibility:hidden;transition:.25s;box-shadow:0 10px 24px rgba(239,68,68,.4);cursor:pointer;border:none;font-size:1.2rem}
+  .back-top.show{opacity:1;visibility:visible}
+  @media(min-width:880px){.menu{display:flex}.hamb{display:none}}
+  @media(max-width:600px){.brand .full span{display:none}}
+  @media(max-width:430px){.nav-right .btn-primary{display:none}.brand .full{font-size:.95rem}}
+</style>
+</head>
+<body id="top">
+<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div class="noise"></div>
+
+<header id="header">
+  <div class="wrap">
+    <nav class="navbar">
+      <a class="brand" href="#top" aria-label="Shringaar Digital Studio">
+        <span class="mk"><span class="b"><i></i><i></i><i></i></span><span class="t">&lt;<b>S</b>/&gt;</span></span>
+        <span class="full"><b>Shringaar</b> <span>Digital Studio</span></span>
+      </a>
+      <div class="menu">
+        <a href="#why">Why us</a><a href="#work">Work</a><a href="#plans">Plans</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <div class="bell" id="bell" role="button" tabindex="0" aria-label="Notifications">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          <span class="dot"></span>
+          <div class="noti" id="noti">
+            <h4>Notifications</h4>
+            <div class="row"><div class="ic">🎉</div><div><p>Launch offer — 10% off your first website this month.</p><small>Just now</small></div></div>
+            <div class="row"><div class="ic">⚡</div><div><p>New: Google Business Profile setup now included.</p><small>This week</small></div></div>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="#contact">Get a quote</a>
+        <div class="hamb" id="hamb" role="button" tabindex="0" aria-label="Menu"><span></span><span></span><span></span></div>
+      </div>
+    </nav>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#why">Why us</a><a href="#work">Work</a><a href="#plans">Plans</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+  <a class="btn btn-wa" href="https://wa.me/918116317662?text=Hi%20Shringaar%2C%20I%27d%20like%20a%20website%20for%20my%20business">Message on WhatsApp</a>
+</nav>
+<div class="scrim" id="scrim"></div>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-badge reveal"><span class="livedot"></span> Rajkot's web studio · now booking</span>
+        <h1 class="reveal" style="margin-top:20px">Beautiful websites for <span class="rotator" id="rot"><span class="word grad-text">jewellers</span></span> <br>that win <span class="grad-text">more customers.</span></h1>
+        <p class="lead reveal">Shringaar Digital Studio builds stunning, fast websites — plus Google listings, Instagram &amp; Facebook pages and SEO — for jewellers and local businesses across Rajkot. You run the shop. We make you shine online.</p>
+        <div class="cta-row reveal">
+          <a class="btn btn-wa" href="https://wa.me/918116317662?text=Hi%20Shringaar%2C%20I%27d%20like%20a%20website%20for%20my%20business">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7s-3.7-3.3-3.8-3.4-1-1.3-1-2.5.6-1.8.9-2c.2-.3.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6s.6 1 1.3 1.6c.9.8 1.6 1 1.9 1.2.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.5.3.1.3.1.7-.1 1.2Z"/></svg>
+            Get a free quote
+          </a>
+          <a class="btn btn-ghost" href="#plans">View plans</a>
+        </div>
+        <div class="pills reveal">
+          <span class="pill">⚡ Live in 3–5 days</span><span class="pill">📱 Mobile-first</span><span class="pill">🔍 SEO ready</span><span class="pill">📍 Made in Rajkot</span>
+        </div>
+        <div class="trust reveal"><span class="stars">★★★★★</span><span>Loved by local businesses in Rajkot</span></div>
+      </div>
+      <div class="reveal">
+        <div class="mock" id="mock">
+          <div class="glow-ring"></div>
+          <span class="spark s1">✦</span><span class="spark s2">✦</span>
+          <div class="badge-float bf-live"><span class="livedot"></span> Live</div>
+          <div class="badge-float bf-rating">★ 5.0 <small>Google</small></div>
+          <div class="badge-float bf-visits">▲ +120% <small>visitors</small></div>
+          <div class="browser tilt" id="tilt">
+            <div class="top"><i></i><i></i><i></i><span class="url"></span></div>
+            <div class="site">
+              <div class="shero">
+                <div class="k">YOUR JEWELLERY STORE</div>
+                <h4>Timeless designs, now online.</h4>
+                <span class="b">Shop the collection →</span>
+              </div>
+              <div class="grid3"><div></div><div></div><div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="scroll-ind reveal" href="#why" aria-label="Scroll to learn more"><i></i></a>
+    <div class="marquee">
+      <div class="track" aria-hidden="true">
+        <span>Websites</span><span>Google Profile</span><span>Instagram</span><span>Facebook</span><span>SEO</span><span>Branding</span>
+        <span>Websites</span><span>Google Profile</span><span>Instagram</span><span>Facebook</span><span>SEO</span><span>Branding</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Why Shringaar</span>
+        <h2>Built for local shops, not big agencies.</h2>
+        <p>No jargon, no long waits, no surprises. Just a clean website and an online presence that actually brings customers through your door.</p>
+      </div>
+      <div class="why-grid">
+        <div class="feat reveal"><div class="ic">📍</div><h3>Local-first</h3><p>We understand Rajkot's shops and jewellers — your website speaks to your real customers.</p></div>
+        <div class="feat reveal"><div class="ic">⚡</div><h3>Fast delivery</h3><p>Most websites go live in just 3–5 days. No months of waiting around.</p></div>
+        <div class="feat reveal"><div class="ic">📱</div><h3>Mobile-first</h3><p>Looks perfect on every phone — because that's where your customers are.</p></div>
+        <div class="feat reveal"><div class="ic">🔑</div><h3>You own everything</h3><p>The website, domain and pages are 100% yours. No lock-in, ever.</p></div>
+        <div class="feat reveal"><div class="ic">💬</div><h3>WhatsApp-first</h3><p>We talk in plain language on WhatsApp, and your site gets a one-tap chat button.</p></div>
+        <div class="feat reveal"><div class="ic">💎</div><h3>Honest pricing</h3><p>Fixed prices agreed upfront. You always know exactly what you'll pay.</p></div>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><div class="num"><span class="count" data-to="5">0</span>d</div><div class="lab">Avg. time to launch</div></div>
+        <div class="stat"><div class="num"><span class="count" data-to="100">0</span>%</div><div class="lab">Mobile-friendly</div></div>
+        <div class="stat"><div class="num"><span class="count" data-to="4">0</span></div><div class="lab">Services in one place</div></div>
+        <div class="stat"><div class="num">1-tap</div><div class="lab">WhatsApp on every site</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Selected Work</span>
+        <h2>Sites we've shipped.</h2>
+      </div>
+      <div class="work-grid">
+        <article class="case big reveal">
+          <div class="thumb t1"><span class="badge">CLIENT · LOCAL BUSINESS</span><span class="lbl">ShineX Car Detailing</span></div>
+          <div class="cbody">
+            <h3>A booking-ready site for a Rajkot detailing studio</h3>
+            <p>Complete website with services, gallery and one-tap WhatsApp booking — designed to turn visitors into paying customers.</p>
+            <a class="visit" href="https://www.shinexcardetailing.com/" target="_blank" rel="noopener">Visit site →</a>
+          </div>
+        </article>
+        <article class="case reveal">
+          <div class="thumb t2"><span class="badge">PRODUCT · SAAS</span><span class="lbl">AgentPassport</span></div>
+          <div class="cbody"><h3>AgentPassport</h3><p>A live full-stack product with dashboard and payments — proof we build serious web apps.</p><a class="visit" href="https://www.agentpassport.in/" target="_blank" rel="noopener">Visit site →</a></div>
+        </article>
+        <article class="case reveal">
+          <div class="thumb t3"><span class="badge">PRODUCT · TOOL</span><span class="lbl">GSTCopilot</span></div>
+          <div class="cbody"><h3>GSTCopilot</h3><p>A web tool with logins, payments and live data for chartered accountants.</p><a class="visit" href="https://gstcopilot-website.vercel.app/" target="_blank" rel="noopener">Visit site →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="plans">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Plans</span>
+        <h2>Simple, honest pricing.</h2>
+        <p>Pick a plan or message us for a custom quote. Prices are a starting guide — final quote confirmed on WhatsApp.</p>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="pname">Starter</div>
+          <div class="price">₹15,000</div>
+          <ul><li>1-page modern website</li><li>Mobile-first design</li><li>One-tap WhatsApp button</li><li>Google Business Profile setup</li></ul>
+          <a class="btn btn-ghost" href="https://wa.me/918116317662?text=Hi%2C%20I%27m%20interested%20in%20the%20Starter%20plan">Choose Starter</a>
+        </div>
+        <div class="plan pop reveal">
+          <div class="pname">Standard</div>
+          <div class="price">₹25,000</div>
+          <ul><li>Multi-section website</li><li>Google Business Profile</li><li>Facebook &amp; Instagram setup</li><li>Basic SEO</li><li>1 month support</li></ul>
+          <a class="btn btn-primary" href="https://wa.me/918116317662?text=Hi%2C%20I%27m%20interested%20in%20the%20Standard%20plan">Choose Standard</a>
+        </div>
+        <div class="plan reveal">
+          <div class="pname">Growth</div>
+          <div class="price">₹25,000 <small>+ ₹2,000/mo</small></div>
+          <ul><li>Everything in Standard</li><li>Monthly updates &amp; edits</li><li>Ongoing SEO</li><li>Priority support</li></ul>
+          <a class="btn btn-ghost" href="https://wa.me/918116317662?text=Hi%2C%20I%27m%20interested%20in%20the%20Growth%20plan">Choose Growth</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <span class="eyebrow">About</span>
+        <h2 style="font-size:clamp(1.9rem,4.6vw,2.6rem);margin:12px 0 16px">A studio that makes local businesses shine online.</h2>
+        <p style="color:var(--muted)">Shringaar Digital Studio is a Rajkot-based web studio helping jewellers and local shops look beautiful and get found online. We blend clean, modern design with simple, honest service — building everything from your website to your Google listing and social pages, all in one place.</p>
+        <p style="color:var(--muted);margin-top:14px">The name <b style="color:var(--text)">Shringaar</b> means adornment and beauty — and that's exactly what we do for your business online.</p>
+      </div>
+      <div class="about-card reveal">
+        <div class="qt">"</div>
+        <blockquote>Working with Shringaar was simple and stress-free — exactly the website I pictured, delivered on time.</blockquote>
+        <div class="who">— <b>Amitabha Halder</b>, ShineX Car Detailing<br><span style="opacity:.6">[ replace with client's own words ]</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal" style="margin-inline:auto;text-align:center">
+        <span class="eyebrow" style="justify-content:center">Q &amp; A</span>
+        <h2>Questions, answered.</h2>
+      </div>
+      <div class="faq">
+        <div class="qa reveal"><button>How long does it take? <span class="pm">+</span></button><div class="ans"><p>Most starter websites go live in 3–5 days. Larger sites with more pages may take a little longer — we'll always give you a clear timeline upfront.</p></div></div>
+        <div class="qa reveal"><button>How much does a website cost? <span class="pm">+</span></button><div class="ans"><p>Plans start at ₹15,000. The final price depends on what you need — message us on WhatsApp for a free, no-pressure quote.</p></div></div>
+        <div class="qa reveal"><button>Do I own my website? <span class="pm">+</span></button><div class="ans"><p>Yes — 100%. The website, domain and all pages belong to you. There's no lock-in.</p></div></div>
+        <div class="qa reveal"><button>Do you set up Google, Instagram and Facebook? <span class="pm">+</span></button><div class="ans"><p>Yes. We can set up your Google Business Profile (so you show on Maps) and create professional Instagram and Facebook pages linked to your site.</p></div></div>
+        <div class="qa reveal"><button>How do I pay? <span class="pm">+</span></button><div class="ans"><p>Simple UPI or bank transfer. Usually a part advance to start, and the rest on delivery once you're happy.</p></div></div>
+        <div class="qa reveal"><button>What if I need changes later? <span class="pm">+</span></button><div class="ans"><p>You can request edits anytime. The Growth plan includes monthly updates, or we can handle one-off changes whenever you need them.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Contact</span><h2>Let's build something beautiful.</h2></div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p>Tell us about your business and we'll send a free quote — usually the same day.</p>
+          <div class="ci-row"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7s-3.7-3.3-3.8-3.4-1-1.3-1-2.5.6-1.8.9-2c.2-.3.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6s.6 1 1.3 1.6c.9.8 1.6 1 1.9 1.2.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.5.3.1.3.1.7-.1 1.2Z"/></svg></div><div><b>WhatsApp</b><small>+91 81163 17662</small></div></div>
+          <div class="ci-row"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><b>Email</b><small>shringaardigitalstudio@gmail.com</small></div></div>
+          <div class="ci-row"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.3-7-11a7 7 0 0 1 14 0c0 5.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><b>Location</b><small>Rajkot, Gujarat</small></div></div>
+          <div class="socials">
+            <a href="https://www.instagram.com/shringaardigitalstudio" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/share/19G7RcFraa/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
+            <a href="https://wa.me/918116317662" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7s-3.7-3.3-3.8-3.4-1-1.3-1-2.5.6-1.8.9-2c.2-.3.5-.3.6-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6s.6 1 1.3 1.6c.9.8 1.6 1 1.9 1.2.3.1.4.1.6-.1l.7-.9c.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.5.3.1.3.1.7-.1 1.2Z"/></svg></a>
+            <a href="mailto:shringaardigitalstudio@gmail.com" aria-label="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+          </div>
+        </div>
+        <form id="cform" onsubmit="return sendWA(event)">
+          <label>Your name</label><input name="name" required placeholder="e.g. Rajesh Soni" />
+          <label>Business name</label><input name="biz" placeholder="e.g. Soni Jewellers" />
+          <label>What do you need?</label><textarea name="msg" rows="4" placeholder="I'd like a website for my jewellery shop..."></textarea>
+          <button class="btn btn-primary" type="submit">Send on WhatsApp →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="final reveal">
+        <h2>Ready to <span class="grad-text">shine online?</span></h2>
+        <p>Get a free quote today — no pressure, no jargon. Just a beautiful website for your business.</p>
+        <a class="btn btn-wa" style="margin:0 auto" href="https://wa.me/918116317662?text=Hi%20Shringaar%2C%20I%27d%20like%20a%20website%20for%20my%20business">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-grid">
+    <div class="ft-about">
+      <a class="brand" href="#top"><span class="mk"><span class="b"><i></i><i></i><i></i></span><span class="t">&lt;<b>S</b>/&gt;</span></span><span class="full"><b>Shringaar</b> <span>Digital Studio</span></span></a>
+      <p>Stunning websites, Google listings, social pages and SEO for jewellers and local businesses in Rajkot.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/shringaardigitalstudio" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/share/19G7RcFraa/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5Z"/></svg></a>
+        <a href="https://wa.me/918116317662" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.4A10 10 0 1 0 12 2Z"/></svg></a>
+        <a href="mailto:shringaardigitalstudio@gmail.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      </div>
+    </div>
+    <div><h5>Services</h5><a href="#plans">Websites</a><a href="#plans">Google Profile</a><a href="#plans">Instagram &amp; Facebook</a><a href="#plans">SEO</a></div>
+    <div><h5>Company</h5><a href="#about">About</a><a href="#work">Work</a><a href="#plans">Plans</a><a href="#faq">FAQ</a><a href="policy.html">Privacy Policy</a></div>
+    <div><h5>Get in touch</h5><a href="https://wa.me/918116317662">+91 81163 17662</a><a href="mailto:shringaardigitalstudio@gmail.com">shringaardigitalstudio@gmail.com</a><a href="#contact">Rajkot, Gujarat</a></div>
+  </div>
+  <div class="wrap ft-bottom">
+    <span>© <span id="yr"></span> Shringaar Digital Studio</span>
+    <span>Crafted with ❤ in Rajkot · <a href="policy.html" style="color:var(--muted)">Privacy &amp; Terms</a></span>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+  const header=document.getElementById('header');
+  addEventListener('scroll',()=>{header.classList.toggle('shrink',scrollY>30);document.getElementById('backTop').classList.toggle('show',scrollY>600)},{passive:true});
+  const hamb=document.getElementById('hamb'),scrim=document.getElementById('scrim');
+  const toggle=()=>header.classList.toggle('menu-open');
+  hamb.onclick=toggle;scrim.onclick=toggle;
+  document.querySelectorAll('#mobileMenu a').forEach(a=>a.onclick=()=>header.classList.remove('menu-open'));
+  const bell=document.getElementById('bell'),noti=document.getElementById('noti');
+  bell.addEventListener('click',e=>{e.stopPropagation();noti.classList.toggle('open')});
+  document.addEventListener('click',()=>noti.classList.remove('open'));
+  noti.addEventListener('click',e=>e.stopPropagation());
+  document.querySelectorAll('.qa button').forEach(b=>b.onclick=()=>{
+    const qa=b.parentElement,ans=qa.querySelector('.ans'),open=qa.classList.contains('open');
+    document.querySelectorAll('.qa').forEach(x=>{x.classList.remove('open');x.querySelector('.ans').style.maxHeight=null});
+    if(!open){qa.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
+  });
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target,to=+el.dataset.to;let n=0;const step=Math.max(1,to/40);const t=setInterval(()=>{n+=step;if(n>=to){n=to;clearInterval(t)}el.textContent=Math.floor(n)},22);cio.unobserve(el)}}),{threshold:.5});
+  document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+  function sendWA(e){e.preventDefault();const f=e.target;const t='Hi Shringaar! I am '+(f.name.value||'(name)')+' from '+(f.biz.value||'(business)')+'. '+(f.msg.value||'I would like a website.');window.open('https://wa.me/918116317662?text='+encodeURIComponent(t),'_blank');return false}
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  document.getElementById('backTop').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+  // rotating headline word
+  const rot=document.getElementById('rot');
+  const words=['jewellers','boutiques','salons','clinics','local shops'];
+  let wi=0;const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(rot&&!reduce){setInterval(()=>{
+    const cur=rot.querySelector('.word');cur.classList.add('out');
+    setTimeout(()=>{wi=(wi+1)%words.length;const n=document.createElement('span');n.className='word grad-text in';n.textContent=words[wi];rot.innerHTML='';rot.appendChild(n)},340);
+  },2600);}
+  // tilt + spotlight (fine pointer only)
+  const hero=document.querySelector('.hero'),tilt=document.getElementById('tilt');
+  if(matchMedia('(pointer:fine)').matches&&!reduce){
+    hero.addEventListener('pointermove',e=>{
+      const r=hero.getBoundingClientRect();const x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      hero.style.setProperty('--mx',x*100+'%');hero.style.setProperty('--my',y*100+'%');
+      if(tilt){tilt.style.setProperty('--ry',(-10+(x-.5)*14)+'deg');tilt.style.setProperty('--rx',(5-(y-.5)*12)+'deg')}
+    });
+    hero.addEventListener('pointerleave',()=>{if(tilt){tilt.style.setProperty('--ry','-10deg');tilt.style.setProperty('--rx','5deg')}});
+  }
+</script>
+</body>
+</html>
