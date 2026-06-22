@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Portfolio Admin — Shringaar Digital Studio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0f13'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='30' font-weight='700' text-anchor='middle' fill='%23f5b73c'%3E%26lt;%3Ctspan fill='%23ef4444'%3ES%3C/tspan%3E/%26gt;%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{--bg:#0e0f13;--card:#191c24;--line:rgba(255,255,255,.1);--text:#eef0f4;--muted:#9aa1ad;--amber:#f5b73c;--red:#ef4444;--grad:linear-gradient(95deg,#f5b73c,#ef4444)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:system-ui,'Segoe UI',sans-serif;line-height:1.5;padding:18px;max-width:760px;margin:0 auto}
+  h1{font-size:1.35rem;display:flex;align-items:center;gap:10px}
+  .mk{width:34px;height:27px;border-radius:6px;background:#fbfbfc;display:flex;align-items:center;justify-content:center;font-family:monospace;font-weight:700;font-size:.7rem;color:var(--amber)}
+  .mk b{color:var(--red)}
+  .sub{color:var(--muted);font-size:.9rem;margin:6px 0 18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+  label{font-size:.8rem;color:var(--muted);display:block;margin:10px 0 4px}
+  input,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:11px;color:var(--text);font-family:inherit;font-size:.95rem}
+  input:focus,textarea:focus{outline:none;border-color:var(--amber)}
+  .hint{font-size:.74rem;color:var(--muted);margin-top:3px}
+  .btn{border:none;border-radius:9px;padding:11px 16px;font-weight:600;font-size:.92rem;cursor:pointer;font-family:inherit}
+  .btn-primary{background:var(--grad);color:#1a0e00}
+  .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+  .btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .proj{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px;margin-bottom:9px;background:var(--bg)}
+  .proj .info{flex:1;min-width:0}
+  .proj .info b{font-size:.95rem}
+  .proj .info .cat{color:var(--amber);font-size:.72rem}
+  .proj .info p{color:var(--muted);font-size:.8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .proj .acts{display:flex;flex-direction:column;gap:5px}
+  .ic{width:34px;height:30px;border:1px solid var(--line);border-radius:7px;background:transparent;color:var(--text);cursor:pointer;font-size:.8rem}
+  .ic.del{color:var(--red)}
+  textarea#out{height:200px;font-family:monospace;font-size:.78rem;white-space:pre}
+  .ok{color:#34d058;font-size:.82rem;margin-left:8px}
+  details{margin-top:10px}summary{cursor:pointer;color:var(--muted);font-size:.85rem}
+  .step{background:rgba(245,183,60,.08);border:1px solid rgba(245,183,60,.25);border-radius:10px;padding:12px;font-size:.85rem;color:var(--text);margin-top:12px}
+  .step b{color:var(--amber)}
+</style>
+</head>
+<body>
+  <h1><span class="mk">&lt;<b>S</b>/&gt;</span> Portfolio Admin</h1>
+  <p class="sub">Add, edit or remove the projects shown on your website's “Work” section. Changes are saved on this phone. When done, export <b>projects.js</b> and upload it to your repo.</p>
+
+  <div class="card">
+    <h3 id="formTitle" style="font-size:1.05rem">Add a project</h3>
+    <label>Title *</label>
+    <input id="f_title" placeholder="e.g. Soni Jewellers" />
+    <label>Category</label>
+    <input id="f_category" placeholder="e.g. Client · Jeweller" />
+    <label>Description</label>
+    <textarea id="f_description" rows="3" placeholder="One line about the project..."></textarea>
+    <label>Live URL</label>
+    <input id="f_url" placeholder="https://..." />
+    <label>Image URL (optional)</label>
+    <input id="f_image" placeholder="Leave blank for an auto gradient thumbnail" />
+    <p class="hint">To use a screenshot: upload it to your repo (e.g. img/soni.png) and put that path here, or paste any image link.</p>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="saveBtn" onclick="save()">Add project</button>
+      <button class="btn btn-ghost" onclick="clearForm()">Clear</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="font-size:1.05rem">Your projects <span id="count" style="color:var(--muted);font-weight:400"></span></h3>
+    <p class="hint">First project shows as the large featured card. Use ↑ ↓ to reorder.</p>
+    <div id="list" style="margin-top:12px"></div>
+  </div>
+
+  <div class="card">
+    <h3 style="font-size:1.05rem">Export</h3>
+    <div class="btn-row" style="margin-top:8px">
+      <button class="btn btn-primary" onclick="gen()">Generate projects.js</button>
+      <button class="btn btn-ghost" onclick="copyOut()">Copy</button>
+      <button class="btn btn-ghost" onclick="download()">Download file</button>
+      <span class="ok" id="okmsg"></span>
+    </div>
+    <textarea id="out" readonly style="margin-top:12px" placeholder="Click 'Generate projects.js'"></textarea>
+    <div class="step">
+      <b>To publish:</b> 1) Download (or copy) projects.js → 2) GitHub repo → upload/replace <b>projects.js</b> → Commit → 3) Vercel auto-redeploys in ~30s. Your Work section updates automatically.
+    </div>
+    <details>
+      <summary>Advanced: import an existing projects.js</summary>
+      <p class="hint" style="margin:8px 0">Paste the contents of your current projects.js here and tap Load (useful on a new phone).</p>
+      <textarea id="importBox" rows="4" placeholder="const PROJECTS = [ ... ];"></textarea>
+      <div class="btn-row"><button class="btn btn-ghost" onclick="importData()">Load</button>
+      <button class="btn btn-ghost" onclick="resetDefault()">Reset to default</button></div>
+    </details>
+  </div>
+
+<script>
+const KEY='shringaar_projects';
+const DEFAULTS=[
+ {title:"ShineX Car Detailing",category:"Client · Local Business",description:"A booking-ready website with services, gallery and one-tap WhatsApp booking — designed to turn visitors into paying customers.",url:"https://www.shinexcardetailing.com/",image:""},
+ {title:"AgentPassport",category:"Product · SaaS",description:"A live full-stack product with dashboard and payments — proof we build serious web apps.",url:"https://www.agentpassport.in/",image:""},
+ {title:"GSTCopilot",category:"Product · Tool",description:"A web tool with logins, payments and live data for chartered accountants.",url:"https://gstcopilot-website.vercel.app/",image:""}
+];
+let projects=[], editIndex=-1;
+function load(){ try{const s=localStorage.getItem(KEY); projects=s?JSON.parse(s):DEFAULTS.slice();}catch(e){projects=DEFAULTS.slice();} }
+function persist(){ try{localStorage.setItem(KEY,JSON.stringify(projects));}catch(e){} }
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function render(){
+  const L=document.getElementById('list');
+  document.getElementById('count').textContent='('+projects.length+')';
+  if(!projects.length){L.innerHTML='<p class="hint">No projects yet. Add one above.</p>';return;}
+  L.innerHTML=projects.map((p,i)=>'<div class="proj"><div class="info"><div class="cat">'+esc(p.category||'')+(i===0?' · FEATURED':'')+'</div><b>'+esc(p.title)+'</b><p>'+esc(p.description||'')+'</p></div><div class="acts"><button class="ic" onclick="move('+i+',-1)">↑</button><button class="ic" onclick="move('+i+',1)">↓</button><button class="ic" onclick="edit('+i+')">✎</button><button class="ic del" onclick="del('+i+')">✕</button></div></div>').join('');
+}
+function save(){
+  const t=document.getElementById('f_title').value.trim();
+  if(!t){alert('Title is required');return;}
+  const obj={title:t,category:document.getElementById('f_category').value.trim(),description:document.getElementById('f_description').value.trim(),url:document.getElementById('f_url').value.trim(),image:document.getElementById('f_image').value.trim()};
+  if(editIndex>=0){projects[editIndex]=obj;editIndex=-1;}else{projects.push(obj);}
+  persist();render();clearForm();
+}
+function clearForm(){['f_title','f_category','f_description','f_url','f_image'].forEach(id=>document.getElementById(id).value='');editIndex=-1;document.getElementById('formTitle').textContent='Add a project';document.getElementById('saveBtn').textContent='Add project';}
+function edit(i){const p=projects[i];document.getElementById('f_title').value=p.title||'';document.getElementById('f_category').value=p.category||'';document.getElementById('f_description').value=p.description||'';document.getElementById('f_url').value=p.url||'';document.getElementById('f_image').value=p.image||'';editIndex=i;document.getElementById('formTitle').textContent='Edit project';document.getElementById('saveBtn').textContent='Save changes';scrollTo({top:0,behavior:'smooth'});}
+function del(i){if(confirm('Delete "'+projects[i].title+'"?')){projects.splice(i,1);persist();render();}}
+function move(i,d){const j=i+d;if(j<0||j>=projects.length)return;[projects[i],projects[j]]=[projects[j],projects[i]];persist();render();}
+function fileText(){return '// Shringaar Digital Studio — portfolio projects\n// Edit this list using admin.html, then upload this file to your repo.\nwindow.PROJECTS = '+JSON.stringify(projects,null,2)+';\n';}
+function gen(){document.getElementById('out').value=fileText();document.getElementById('okmsg').textContent='Generated ✓';}
+function copyOut(){const t=fileText();navigator.clipboard.writeText(t).then(()=>{document.getElementById('out').value=t;document.getElementById('okmsg').textContent='Copied ✓';});}
+function download(){const b=new Blob([fileText()],{type:'text/javascript'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='projects.js';a.click();document.getElementById('okmsg').textContent='Downloaded ✓';}
+function importData(){const txt=document.getElementById('importBox').value;const m=txt.indexOf('[');const n=txt.lastIndexOf(']');if(m<0||n<0){alert('Could not find a project list to import.');return;}try{const arr=JSON.parse(txt.slice(m,n+1));if(Array.isArray(arr)){projects=arr;persist();render();alert('Imported '+arr.length+' projects.');}}catch(e){alert('Import failed — make sure you pasted the full file.');}}
+function resetDefault(){if(confirm('Reset to the original 3 projects?')){projects=DEFAULTS.slice();persist();render();}}
+load();render();
+</script>
+</body>
+</html>

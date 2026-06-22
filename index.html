@@ -385,24 +385,7 @@
         <span class="eyebrow">Selected Work</span>
         <h2>Sites we've shipped.</h2>
       </div>
-      <div class="work-grid">
-        <article class="case big reveal">
-          <div class="thumb t1"><span class="badge">CLIENT · LOCAL BUSINESS</span><span class="lbl">ShineX Car Detailing</span></div>
-          <div class="cbody">
-            <h3>A booking-ready site for a Rajkot detailing studio</h3>
-            <p>Complete website with services, gallery and one-tap WhatsApp booking — designed to turn visitors into paying customers.</p>
-            <a class="visit" href="https://www.shinexcardetailing.com/" target="_blank" rel="noopener">Visit site →</a>
-          </div>
-        </article>
-        <article class="case reveal">
-          <div class="thumb t2"><span class="badge">PRODUCT · SAAS</span><span class="lbl">AgentPassport</span></div>
-          <div class="cbody"><h3>AgentPassport</h3><p>A live full-stack product with dashboard and payments — proof we build serious web apps.</p><a class="visit" href="https://www.agentpassport.in/" target="_blank" rel="noopener">Visit site →</a></div>
-        </article>
-        <article class="case reveal">
-          <div class="thumb t3"><span class="badge">PRODUCT · TOOL</span><span class="lbl">GSTCopilot</span></div>
-          <div class="cbody"><h3>GSTCopilot</h3><p>A web tool with logins, payments and live data for chartered accountants.</p><a class="visit" href="https://gstcopilot-website.vercel.app/" target="_blank" rel="noopener">Visit site →</a></div>
-        </article>
-      </div>
+      <div class="work-grid" id="workGrid"></div>
     </div>
   </section>
 
@@ -530,7 +513,24 @@
 
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
+<script src="projects.js"></script>
 <script>
+  // render portfolio from projects.js
+  (function(){
+    const grid=document.getElementById('workGrid');
+    const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    if(grid && Array.isArray(window.PROJECTS)){
+      grid.innerHTML = window.PROJECTS.map((p,i)=>{
+        const big = i===0 ? ' big' : '';
+        const tcls = 't'+((i%3)+1);
+        const thumb = p.image
+          ? '<div class="thumb" style="background:#15171d url(\''+esc(p.image)+'\') center/cover"><span class="badge">'+esc(p.category)+'</span></div>'
+          : '<div class="thumb '+tcls+'"><span class="badge">'+esc(p.category)+'</span><span class="lbl">'+esc(p.title)+'</span></div>';
+        const link = p.url ? '<a class="visit" href="'+esc(p.url)+'" target="_blank" rel="noopener">Visit site →</a>' : '';
+        return '<article class="case'+big+' reveal">'+thumb+'<div class="cbody"><h3>'+esc(p.title)+'</h3><p>'+esc(p.description)+'</p>'+link+'</div></article>';
+      }).join('');
+    }
+  })();
   const header=document.getElementById('header');
   addEventListener('scroll',()=>{header.classList.toggle('shrink',scrollY>30);document.getElementById('backTop').classList.toggle('show',scrollY>600)},{passive:true});
   const hamb=document.getElementById('hamb'),scrim=document.getElementById('scrim');
