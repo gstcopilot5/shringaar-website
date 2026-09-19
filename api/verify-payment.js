@@ -1,73 +1,96 @@
 const crypto = require("crypto");
+const { createClient } = require("@supabase/supabase-js");
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
-      return res.status(405).json({
-            success: false,
-                  error: "Method not allowed",
-                      });
-                        }
+      return res.status(405).json({ error: "Method not allowed" });
+        }
 
-                          try {
-                              const {
-                                    razorpay_order_id,
-                                          razorpay_payment_id,
-                                                razorpay_signature,
-                                                    } = req.body || {};
+          try {
+              const {
+                    razorpay_order_id,
+                          razorpay_payment_id,
+                                razorpay_signature,
+                                      clientId,
+                                            projectId,
+                                                  amount,
+                                                        currency,
+                                                            } = req.body || {};
 
-                                                        if (
-                                                              !razorpay_order_id ||
-                                                                    !razorpay_payment_id ||
-                                                                          !razorpay_signature
-                                                                              ) {
-                                                                                    return res.status(400).json({
-                                                                                            success: false,
-                                                                                                    error: "Missing payment verification details",
-                                                                                                          });
-                                                                                                              }
+                                                                if (
+                                                                      !razorpay_order_id ||
+                                                                            !razorpay_payment_id ||
+                                                                                  !razorpay_signature
+                                                                                      ) {
+                                                                                            return res.status(400).json({
+                                                                                                    verified: false,
+                                                                                                            error: "Missing payment verification data",
+                                                                                                                  });
+                                                                                                                      }
 
-                                                                                                                  const secret = process.env.RAZORPAY_KEY_SECRET;
+                                                                                                                          // Verify Razorpay signature
+                                                                                                                              const expectedSignature = crypto
+                                                                                                                                    .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET)
+                                                                                                                                          .update(`${razorpay_order_id}|${razorpay_payment_id}`)
+                                                                                                                                                .digest("hex");
 
-                                                                                                                      if (!secret) {
-                                                                                                                            console.error("RAZORPAY_KEY_SECRET is not configured");
+                                                                                                                                                    const verified =
+                                                                                                                                                          expectedSignature.length === razorpay_signature.length &&
+                                                                                                                                                                crypto.timingSafeEqual(
+                                                                                                                                                                        Buffer.from(expectedSignature),
+                                                                                                                                                                                Buffer.from(razorpay_signature)
+                                                                                                                                                                                      );
 
-                                                                                                                                  return res.status(500).json({
-                                                                                                                                          success: false,
-                                                                                                                                                  error: "Payment verification is not configured",
-                                                                                                                                                        });
-                                                                                                                                                            }
+                                                                                                                                                                                          if (!verified) {
+                                                                                                                                                                                                return res.status(400).json({
+                                                                                                                                                                                                        verified: false,
+                                                                                                                                                                                                                error: "Payment verification failed",
+                                                                                                                                                                                                                      });
+                                                                                                                                                                                                                          }
 
-                                                                                                                                                                const generatedSignature = crypto
-                                                                                                                                                                      .createHmac("sha256", secret)
-                                                                                                                                                                            .update(`${razorpay_order_id}|${razorpay_payment_id}`)
-                                                                                                                                                                                  .digest("hex");
+                                                                                                                                                                                                                              // Connect to Supabase using the server-only service role key
+                                                                                                                                                                                                                                  const supabase = createClient(
+                                                                                                                                                                                                                                        process.env.SUPABASE_URL,
+                                                                                                                                                                                                                                              process.env.SUPABASE_SERVICE_ROLE_KEY
+                                                                                                                                                                                                                                                  );
 
-                                                                                                                                                                                      const isValid = crypto.timingSafeEqual(
-                                                                                                                                                                                            Buffer.from(generatedSignature),
-                                                                                                                                                                                                  Buffer.from(razorpay_signature)
-                                                                                                                                                                                                      );
+                                                                                                                                                                                                                                                      // Save payment in Supabase
+                                                                                                                                                                                                                                                          const { error: dbError } = await supabase
+                                                                                                                                                                                                                                                                .from("payments")
+                                                                                                                                                                                                                                                                      .insert({
+                                                                                                                                                                                                                                                                              client_id: clientId ? Number(clientId) : null,
+                                                                                                                                                                                                                                                                                      project_id: projectId ? Number(projectId) : null,
+                                                                                                                                                                                                                                                                                              razorpay_order_id,
+                                                                                                                                                                                                                                                                                                      razorpay_payment_id,
+                                                                                                                                                                                                                                                                                                              amount: Number(amount || 0),
+                                                                                                                                                                                                                                                                                                                      currency: currency || "INR",
+                                                                                                                                                                                                                                                                                                                              payment_type: "RAZORPAY",
+                                                                                                                                                                                                                                                                                                                                      payment_status: "PAID",
+                                                                                                                                                                                                                                                                                                                                              paid_at: new Date().toISOString(),
+                                                                                                                                                                                                                                                                                                                                                    });
 
-                                                                                                                                                                                                          if (!isValid) {
-                                                                                                                                                                                                                return res.status(400).json({
-                                                                                                                                                                                                                        success: false,
-                                                                                                                                                                                                                                verified: false,
-                                                                                                                                                                                                                                        error: "Invalid payment signature",
-                                                                                                                                                                                                                                              });
-                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                                                                        if (dbError) {
+                                                                                                                                                                                                                                                                                                                                                              console.error("Supabase payment insert error:", dbError);
 
-                                                                                                                                                                                                                                                      return res.status(200).json({
-                                                                                                                                                                                                                                                            success: true,
-                                                                                                                                                                                                                                                                  verified: true,
-                                                                                                                                                                                                                                                                        message: "Payment verified successfully",
-                                                                                                                                                                                                                                                                              payment_id: razorpay_payment_id,
-                                                                                                                                                                                                                                                                                    order_id: razorpay_order_id,
-                                                                                                                                                                                                                                                                                        });
-                                                                                                                                                                                                                                                                                          } catch (error) {
-                                                                                                                                                                                                                                                                                              console.error("Payment verification error:", error);
+                                                                                                                                                                                                                                                                                                                                                                    return res.status(500).json({
+                                                                                                                                                                                                                                                                                                                                                                            verified: true,
+                                                                                                                                                                                                                                                                                                                                                                                    saved: false,
+                                                                                                                                                                                                                                                                                                                                                                                            error: "Payment verified but database save failed",
+                                                                                                                                                                                                                                                                                                                                                                                                  });
+                                                                                                                                                                                                                                                                                                                                                                                                      }
 
-                                                                                                                                                                                                                                                                                                  return res.status(500).json({
-                                                                                                                                                                                                                                                                                                        success: false,
-                                                                                                                                                                                                                                                                                                              error: "Unable to verify payment",
-                                                                                                                                                                                                                                                                                                                  });
-                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                    };
+                                                                                                                                                                                                                                                                                                                                                                                                          return res.status(200).json({
+                                                                                                                                                                                                                                                                                                                                                                                                                verified: true,
+                                                                                                                                                                                                                                                                                                                                                                                                                      saved: true,
+                                                                                                                                                                                                                                                                                                                                                                                                                            payment_id: razorpay_payment_id,
+                                                                                                                                                                                                                                                                                                                                                                                                                                  order_id: razorpay_order_id,
+                                                                                                                                                                                                                                                                                                                                                                                                                                      });
+                                                                                                                                                                                                                                                                                                                                                                                                                                        } catch (error) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                            console.error("Payment verification error:", error);
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                return res.status(500).json({
+                                                                                                                                                                                                                                                                                                                                                                                                                                                      verified: false,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            error: "Unable to verify payment",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                });
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  };
