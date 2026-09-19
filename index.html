@@ -572,5 +572,64 @@
     hero.addEventListener('pointerleave',()=>{if(tilt){tilt.style.setProperty('--ry','-10deg');tilt.style.setProperty('--rx','5deg')}});
   }
 </script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<button
+  id="testPayBtn"
+    style="position:fixed;bottom:20px;right:20px;z-index:9999;padding:14px 20px;border:0;border-radius:10px;cursor:pointer;"
+    >
+      Test ₹100 Payment
+      </button>
+
+      <script>
+        document.getElementById("testPayBtn").addEventListener("click", async () => {
+            try {
+                  const response = await fetch("/api/create-order", {
+                          method: "POST",
+                                  headers: {
+                                            "Content-Type": "application/json"
+                                                    },
+                                                            body: JSON.stringify({
+                                                                      amount: 100,
+                                                                                projectId: 1,
+                                                                                          clientId: 1
+                                                                                                  })
+                                                                                                        });
+
+                                                                                                              const data = await response.json();
+
+                                                                                                                    if (!data.success) {
+                                                                                                                            throw new Error(data.error || "Unable to create order");
+                                                                                                                                  }
+
+                                                                                                                                        const options = {
+                                                                                                                                                key: data.key_id,
+                                                                                                                                                        amount: data.order.amount,
+                                                                                                                                                                currency: data.order.currency,
+                                                                                                                                                                        name: "Shringaar Digital Studio",
+                                                                                                                                                                                description: "Test Payment",
+                                                                                                                                                                                        order_id: data.order.id,
+
+                                                                                                                                                                                                handler: function (response) {
+                                                                                                                                                                                                          alert(
+                                                                                                                                                                                                                      "Test payment completed!\n\nPayment ID: " +
+                                                                                                                                                                                                                                  response.razorpay_payment_id
+                                                                                                                                                                                                                                            );
+                                                                                                                                                                                                                                                    },
+
+                                                                                                                                                                                                                                                            theme: {
+                                                                                                                                                                                                                                                                      color: "#111111"
+                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                                    };
+
+                                                                                                                                                                                                                                                                                          const razorpay = new Razorpay(options);
+                                                                                                                                                                                                                                                                                                razorpay.open();
+
+                                                                                                                                                                                                                                                                                                    } catch (error) {
+                                                                                                                                                                                                                                                                                                          console.error(error);
+                                                                                                                                                                                                                                                                                                                alert("Payment could not be started.");
+                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                      });
+                                                                                                                                                                                                                                                                                                                      </script>
 </body>
 </html>
