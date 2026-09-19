@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/gstcopilot5/shringaar-website#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
     "razorpay": "^2.9.8"
   }
 }
