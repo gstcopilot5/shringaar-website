@@ -60,7 +60,8 @@
       <button class="btn btn-ghost" onclick="clearForm()">Clear</button>
     </div>
   </div>
-
+</div> <!-- Export card --
+            </script>-->
   <div class="card">
     <h3 style="font-size:1.05rem">Your projects <span id="count" style="color:var(--muted);font-weight:400"></span></h3>
     <p class="hint">First project shows as the large featured card. Use ↑ ↓ to reorder.</p>
@@ -87,7 +88,14 @@
       <button class="btn btn-ghost" onclick="resetDefault()">Reset to default</button></div>
     </details>
   </div>
+<div class="card">
+    <h3 style="font-size:1.05rem">Payments</h3>
+      <p class="hint">Recent payments received through Razorpay.</p>
 
+        <div id="paymentsList" style="margin-top:12px">
+            Loading payments...
+              </div>
+              </div>
 <script>
 const KEY='shringaar_projects';
 const DEFAULTS=[
@@ -122,7 +130,56 @@ function copyOut(){const t=fileText();navigator.clipboard.writeText(t).then(()=>
 function download(){const b=new Blob([fileText()],{type:'text/javascript'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='projects.js';a.click();document.getElementById('okmsg').textContent='Downloaded ✓';}
 function importData(){const txt=document.getElementById('importBox').value;const m=txt.indexOf('[');const n=txt.lastIndexOf(']');if(m<0||n<0){alert('Could not find a project list to import.');return;}try{const arr=JSON.parse(txt.slice(m,n+1));if(Array.isArray(arr)){projects=arr;persist();render();alert('Imported '+arr.length+' projects.');}}catch(e){alert('Import failed — make sure you pasted the full file.');}}
 function resetDefault(){if(confirm('Reset to the original 3 projects?')){projects=DEFAULTS.slice();persist();render();}}
-load();render();
+async function loadPayments() {
+    const container = document.getElementById("paymentsList");
+
+      if (!container) return;
+
+        try {
+            const response = await fetch("/api/admin-payments");
+
+                if (!response.ok) {
+                      throw new Error("Failed to load payments");
+                          }
+
+                              const result = await response.json();
+                                  const payments = result.payments || [];
+
+                                      if (payments.length === 0) {
+                                            container.innerHTML =
+                                                    '<p class="hint">No payments found.</p>';
+                                                          return;
+                                                              }
+
+                                                                  container.innerHTML = payments.map(payment => `
+                                                                        <div class="proj" style="margin-bottom:10px">
+                                                                                <div class="info">
+                                                                                          <div class="cat">RAZORPAY</div>
+                                                                                                    <div class="title">
+                                                                                                                ₹${Number(payment.amount || 0).toLocaleString("en-IN")}
+                                                                                                                          </div>
+                                                                                                                                    <div class="desc">
+                                                                                                                                                Payment ID: ${esc(payment.razorpay_payment_id || "-")}<br>
+                                                                                                                                                            Order ID: ${esc(payment.razorpay_order_id || "-")}<br>
+                                                                                                                                                                        Project ID: ${esc(payment.project_id || "-")}<br>
+                                                                                                                                                                                    Status: ${esc(payment.payment_status || "-")}
+                                                                                                                                                                                              </div>
+                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                `).join("");
+
+                                                                                                                                                                                                                  } catch (error) {
+                                                                                                                                                                                                                      console.error("Payments loading error:", error);
+
+                                                                                                                                                                                                                          container.innerHTML =
+                                                                                                                                                                                                                                '<p class="hint">Unable to load payments.</p>';
+                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                  load();
+                                                                                                                                                                                                                                  render();
+                                                                                                                                                                                                                                  loadPayments();
+}
 </script>
 </body>
 </html>
