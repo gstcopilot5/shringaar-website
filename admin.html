@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex" />
-<title>Portfolio Admin — Shringaar Digital Studio</title>
+<title>Portfolio Admin — Subo Digital Studio</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0f13'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='30' font-weight='700' text-anchor='middle' fill='%23f5b73c'%3E%26lt;%3Ctspan fill='%23ef4444'%3ES%3C/tspan%3E/%26gt;%3C/text%3E%3C/svg%3E" />
 <style>
   :root{--bg:#0e0f13;--card:#191c24;--line:rgba(255,255,255,.1);--text:#eef0f4;--muted:#9aa1ad;--amber:#f5b73c;--red:#ef4444;--grad:linear-gradient(95deg,#f5b73c,#ef4444)}
@@ -99,8 +99,8 @@
 <script>
 const KEY='shringaar_projects';
 const DEFAULTS=[
- {title:"ShineX Car Detailing",category:"Client · Local Business",description:"A booking-ready website with services, gallery and one-tap WhatsApp booking — designed to turn visitors into paying customers.",url:"https://www.shinexcardetailing.com/",image:""},
- {title:"AgentPassport",category:"Product · SaaS",description:"A live full-stack product with dashboard and payments — proof we build serious web apps.",url:"https://www.agentpassport.in/",image:""},
+ {title:"ShineX Car Detailing",category:"Client · Local Business",description:"A website with services, a gallery and one-tap WhatsApp booking.",url:"https://www.shinexcardetailing.com/",image:""},
+ {title:"AgentPassport",category:"Product · SaaS",description:"A product with a dashboard and payments.",url:"https://www.agentpassport.in/",image:""},
  {title:"GSTCopilot",category:"Product · Tool",description:"A web tool with logins, payments and live data for chartered accountants.",url:"https://gstcopilot-website.vercel.app/",image:""}
 ];
 let projects=[], editIndex=-1;
@@ -124,7 +124,7 @@ function clearForm(){['f_title','f_category','f_description','f_url','f_image'].
 function edit(i){const p=projects[i];document.getElementById('f_title').value=p.title||'';document.getElementById('f_category').value=p.category||'';document.getElementById('f_description').value=p.description||'';document.getElementById('f_url').value=p.url||'';document.getElementById('f_image').value=p.image||'';editIndex=i;document.getElementById('formTitle').textContent='Edit project';document.getElementById('saveBtn').textContent='Save changes';scrollTo({top:0,behavior:'smooth'});}
 function del(i){if(confirm('Delete "'+projects[i].title+'"?')){projects.splice(i,1);persist();render();}}
 function move(i,d){const j=i+d;if(j<0||j>=projects.length)return;[projects[i],projects[j]]=[projects[j],projects[i]];persist();render();}
-function fileText(){return '// Shringaar Digital Studio — portfolio projects\n// Edit this list using admin.html, then upload this file to your repo.\nwindow.PROJECTS = '+JSON.stringify(projects,null,2)+';\n';}
+function fileText(){return '// Subo Digital Studio — portfolio projects\n// Edit this list using admin.html, then upload this file to your repo.\nwindow.PROJECTS = '+JSON.stringify(projects,null,2)+';\n';}
 function gen(){document.getElementById('out').value=fileText();document.getElementById('okmsg').textContent='Generated ✓';}
 function copyOut(){const t=fileText();navigator.clipboard.writeText(t).then(()=>{document.getElementById('out').value=t;document.getElementById('okmsg').textContent='Copied ✓';});}
 function download(){const b=new Blob([fileText()],{type:'text/javascript'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='projects.js';a.click();document.getElementById('okmsg').textContent='Downloaded ✓';}

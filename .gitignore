@@ -1,0 +1,14 @@
+# Secrets and local environment
+.env
+.env.*
+
+# Dependencies
+node_modules/
+
+# Vercel CLI link folder
+.vercel
+
+# Local Supabase debugging (not part of the website)
+supabase-error.txt
+supabase-check.js
+test-supabase.js

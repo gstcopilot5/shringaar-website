@@ -1,17 +1,17 @@
-// Shringaar Digital Studio — portfolio projects
+// Subo Digital Studio — portfolio projects
 // Edit this list using admin.html, then upload this file to your repo.
 window.PROJECTS = [
   {
     "title": "ShineX Car Detailing",
     "category": "Client · Local Business",
-    "description": "A booking-ready website with services, gallery and one-tap WhatsApp booking — designed to turn visitors into paying customers.",
+    "description": "A website with services, a gallery and one-tap WhatsApp booking.",
     "url": "https://www.shinexcardetailing.com/",
     "image": ""
   },
   {
     "title": "AgentPassport",
     "category": "Product · SaaS",
-    "description": "A live full-stack product with dashboard and payments — proof we build serious web apps.",
+    "description": "A product with a dashboard and payments.",
     "url": "https://www.agentpassport.in/",
     "image": ""
   },
